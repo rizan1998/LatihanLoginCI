@@ -7,7 +7,9 @@
     <h1 class="h3 mb-4 text-gray-800"><?= $title ?>
 
     </h1>
+    <!-- graphic -->
     <div id="graph" style="overflow: auto;"></div>
+
     <button type="button" class="btn btn-primary">
         jumlah data saat ini: <span class="badge badge-light"><?php echo $total_asset; ?></span>
         <span class="sr-only">unread messages</span>
@@ -49,6 +51,7 @@
         foreach ($data_buku as $row) {
             $no++;
         ?>
+            <!-- jika ingin tampilan table -->
             <!-- <tr align=center>
                 <td><?php echo $no; ?></td>
                 <td><?php echo $row['nama']; ?></td>
