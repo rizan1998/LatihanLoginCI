@@ -31,15 +31,15 @@
 
                 <!-- SIAPKAN SUB MENU SESUAI MENU -->
                 <?php
-                    $menuId = $m['id'];
-                    $querySubMenu = "SELECT * 
+                $menuId = $m['id'];
+                $querySubMenu = "SELECT * 
                                     FROM `user_sub_menu` JOIN `user_menu`
                                     ON `user_sub_menu`.`menu_id` = `user_menu`.`id`
                                     WHERE `user_sub_menu`.`menu_id` = $menuId 
                                     AND `user_sub_menu`.`is_active` = 1
                                     ";
-                    $subMenu = $this->db->query($querySubMenu)->result_array();
-                    ?>
+                $subMenu = $this->db->query($querySubMenu)->result_array();
+                ?>
 
                 <?php foreach ($subMenu as $sm) : ?>
                     <?php if ($title == $sm['title']) : ?>
@@ -59,11 +59,16 @@
                 <?php endforeach; ?>
 
 
+                <li class="nav-item">
+                    <a class="nav-link" href="http://bit.ly/2uLNqxm">
+                        <i class="fab fa-whatsapp link"></i>
+                        <span>chat sekarang</span></a>
+                </li>
                 <!-- Divider -->
 
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('auth/logout'); ?>">
-                        <i class="fas fa-fw fa-sign-out-alt"></i>
+                        <i class="fas fa-sign-out-alt"></i>
                         <span>Logout</span></a>
                 </li>
 
